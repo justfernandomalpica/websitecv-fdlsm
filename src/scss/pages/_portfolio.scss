@@ -1,0 +1,19 @@
+@use "include" as *;
+
+.portfolio-container {
+  @include center-content;
+  @include seciton;
+
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  & .portfolio-articles {
+    gap: 2rem;
+  }
+}

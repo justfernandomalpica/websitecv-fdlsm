@@ -1,0 +1,57 @@
+@use "include" as *;
+
+.about {
+  @include center-content;
+  @include seciton;
+
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  gap: 3rem;
+
+  &-text {
+    h2 {
+      text-align: center;
+    }
+    p {
+      margin-top: 2rem;
+      text-align: center;
+    }
+  }
+
+  &-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-age {
+      text-align: center;
+    }
+    &-image {
+      margin-top: 2rem;
+
+      img {
+        max-width: 30rem;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+  }
+
+  @include tablet {
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 5rem;
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        text-align: start;
+      }
+    }
+    &-badge {
+      justify-content: center;
+    }
+  }
+}

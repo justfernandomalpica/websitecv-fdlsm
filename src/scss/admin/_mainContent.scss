@@ -1,0 +1,25 @@
+@use "include" as *;
+
+.admin-main {
+  @include center-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: calc($separation / 2);
+
+  .create-button {
+    @include button($green-dark, $green, $green-light);
+    margin-left: auto;
+  }
+
+  .elements-container {
+    width: 100%;
+
+    .empty-message {
+      margin-top: 10rem;
+      text-align: center;
+      color: rgba($light, 0.5);
+    }
+  }
+}

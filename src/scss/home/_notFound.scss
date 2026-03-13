@@ -1,0 +1,37 @@
+@use "include" as *;
+
+.not-found {
+  &__wrapper {
+    &.container {
+      height: 100%;
+      @include center-content;
+      @include seciton;
+    }
+  }
+
+  &__code {
+    font-size: calc($base-size * 6);
+    line-height: 0.9;
+  }
+
+  &__content {
+    @include seciton;
+    text-align: center;
+  }
+
+  &__text {
+    margin-bottom: 1.5rem;
+  }
+
+  &__actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    .button {
+      @include button($green-dark, $green, $green-light);
+    }
+  }
+}

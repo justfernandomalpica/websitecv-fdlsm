@@ -1,0 +1,6 @@
+$adminData = [
+    "host" => "localhost"
+    "name" => "Fernando",
+    "email" => "fernando_santosmalpica@outlook.com",
+    "password" => "121213"
+];

@@ -1,0 +1,14 @@
+@h2 Este mismo sitio web fue desarrollado 100% por mí.
+@br
+@p Debido a que comencé a tomar una dirección profesional diferente a la que venía encaminado, dediqué mi tiempo a aprender a fondo el desarrollo web, yendo un poco más allá y estudiar arquitecturas de desarrollo, estructuras de datos, diferentes lenguajes con enfoque en front-end y back-end. Gracias a esto, decidí aplicar mis nuevos conocimientos adquiridos en un proyecto realista con un verdadero uso: presentar de diferente manera mi Curriculum Vitae. Así puede funcionar también como un portafolio o prueba viva de la efectividad de mi rápido aprendizaje.
+@br
+@p Este sitio web está construido sobre una arquitectura Modelo-Vista-Controlador (MVC), permitiendo tener más control sobre la forma en la que la lógica, la persistencia de datos y la visualización se comunican. Específicamente, en mi capa de modelos creé las entidades básicas que le dan sentido al sitio (proyectos de portafolio, experiencias laborales, etc.), así mismo diseñé un Active Record que me permita separar un poco más la persistencia del comportamiento propio de cada entidad. Mis controladores los ocupo para manipular mis entidades según entradas del usuario. Al final las vistas están organizadas en shells y parciales, de modo que el código puede ser reutilizable.
+@br
+@p El front-end fue diseñado usando SASS, dándome el control de la gestión de archivos de estilos CSS. Al final para poder convertir mis los archivos SCSS usé automatización con GULP, usándolo como compilador. Igualmente, eso me sirvió para poder crear un solo archivo bundle.js
+@p Gracias a GULP, puedo tener archivos CSS y JS minificados y optimizados. Además de ciertas funcionalidades como conversión, escalado y recorte de imágenes con la intención de beneficiar el performance de la página.
+@br
+@h2 Zona privada de administración
+@br
+@p Algo que tenía claro desde el principio era que no quería una página web estática. Quería que incluso después del deploit, pudiera seguir reutilizando la página para ser mi principal carta de presentación. Por lo que esta página tiene un área de administración que me permite crear entradas de portafolio (como ésta que usted está leyendo), experiencia laboral y conforme vaya creciendo profesionalmente, ir agregando áreas de experiencia o skills. 
+@p Al área de administración se puede acceder como cualquier otra página que utilice estas funcionalidades, agregando /admin a la URL y eso lo redireccionará a una página de login.
+@p Creo que realizar este proyecto me ha demostrado nuevamente que es posible aprender lo que uno se proponga, y que ninguna puerta está realmente cerrada.

@@ -1,0 +1,9 @@
+@use "include" as *;
+
+.homepage {
+  @include desktop-s {
+    & .navbar {
+      background-color: rgba(#000, 0);
+    }
+  }
+}

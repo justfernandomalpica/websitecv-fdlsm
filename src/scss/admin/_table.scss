@@ -1,0 +1,67 @@
+@use "include" as *;
+
+.table {
+  width: 100%;
+  background-color: $dark;
+  border: none;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 3rem;
+  //   padding: 0.5rem 1rem;
+
+  &-header {
+    tr {
+      background-color: $darken;
+    }
+    &-cell {
+      padding: 0.66rem 1rem;
+    }
+  }
+
+  &-body {
+    font-weight: 200;
+
+    &-row {
+      background-color: $grayDark;
+
+      &:nth-child(odd) {
+        background-color: $gray;
+      }
+    }
+
+    &-cell {
+      padding: 1rem;
+      border-right: 1px rgba($lighten, 0.2) solid;
+
+      &:last-child {
+        border-right: unset;
+      }
+
+      &.buttons {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      img {
+        max-width: 15rem;
+      }
+    }
+  }
+
+  &-action-button {
+    &.edit {
+      @include button($blue, $blue-dark, $blue-light);
+      font-size: calc($base-size * 0.8);
+      margin: auto 0;
+    }
+    &.delete {
+      @include button($red-dark, $red, $red-light);
+      font-size: calc($base-size * 0.8);
+      margin: auto 0;
+    }
+  }
+}

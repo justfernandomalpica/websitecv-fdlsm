@@ -1,0 +1,15 @@
+@p Debido a las medidas de seguridad tomadas por el gobierno durante la pandemia, muchos eventos tuvieron que cambiar de modalidad de manera drástica, sobre todo los que involucraban la conglomeración de gente como lo son las convenciones o ferias del empleo.
+@br
+@p Gracias al equipo FIME3D, tuve la dicha de trabajar como artista modelador y texturizador para este proyecto, que involucra justamente la realización de una Feria Virtual, donde distintos ponentes se acercaron a la universidad a solicitar un espacio para obtener visibilidad.
+@br
+@h2 Actividades principales
+@ul(
+@li(
+@h3 Modelado 3D
+@p Utilizando tecnologías como principalmente Blender o Autodesk 3Ds Max, fui encargado de generar diversos Assets para implementar en el máster final. Desde elementos secundarios como barandales, escaleras, puertas o ventanas, hasta la participación en el modelado de stands para los ponentes.
+@li)
+@li(
+@h3 Texturizado
+@p Esta fue la etapa en la que mas me pude desarrollar, pues fui encargado de texturizar todo el entorno 3D, de tal modo que visualmente fuera lo mas cercano a la realidad. Utilizando de técnicas de texturizado procedural, PBR (Physically based rendering) o Renderizado basado en físicas. Esto deja implícito la realización de mapeo UV y hasta cierto punto optimización de modelos.
+@li)
+@ul)

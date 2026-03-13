@@ -1,0 +1,257 @@
+@use "include" as *;
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  font-size: 16px;
+  background-color: $gray;
+
+  display: grid;
+
+  &.is-public,
+  &.is-admin {
+    grid-template-rows: auto 1fr auto;
+  }
+
+  &.not-found,
+  &.is-auth {
+    grid-template-rows: 1fr auto;
+  }
+}
+img {
+  width: 100%;
+}
+fieldset {
+  border: none;
+}
+
+input:not([type="submit"]) {
+  padding: 0.5rem;
+  background-color: unset;
+  color: $lighten;
+  border: none;
+  border-bottom: 2px solid $grayDark;
+  transition:
+    color 0.3s ease,
+    border-bottom-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &::placeholder {
+    color: rgba($light, 0.3);
+  }
+
+  &:focus-visible,
+  &:focus {
+    outline: none;
+    border-bottom-color: $blue;
+    box-shadow: 0px 9px 4px -6px rgba(27, 33, 53, 0.54);
+  }
+
+  &:disabled {
+    border-bottom-color: $grayDark;
+    &::placeholder {
+      color: $grayDark;
+    }
+  }
+}
+
+textarea {
+  padding: 1rem;
+  background-color: $gray;
+  border: 2px $dark solid;
+  color: $lighten;
+  border-radius: 5px;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+
+  &::placeholder {
+    color: rgba($light, 0.3);
+  }
+
+  &:focus-visible,
+  &:focus {
+    outline: none;
+    border-color: $blue;
+  }
+
+  &:disabled {
+    border-color: $grayDark;
+    &::placeholder {
+      color: $grayDark;
+    }
+  }
+}
+
+select {
+  background-color: $dark;
+  border: none;
+  padding: 0.33rem 0.66rem;
+  border-radius: 5px;
+  color: $light;
+  border: 1px rgba($lighten, 0.2) solid;
+}
+
+[type="submit"] {
+  border: none;
+  background-color: unset;
+  display: block;
+  @include button($blue-dark, $blue, $blue-light, 20rem);
+  color: $light;
+}
+
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+.dev-ui {
+  z-index: 999;
+
+  position: fixed;
+  left: 2rem;
+  bottom: 7.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  width: 12rem;
+
+  a {
+    flex: 1;
+    margin: 0;
+    @include button($red-dark, $red, $red-light, auto);
+  }
+}
+
+.alerts {
+  position: fixed;
+  height: fit-content;
+  max-width: 25rem;
+  top: 2rem;
+  right: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.alert {
+  &.error {
+    background-color: $red-dark;
+  }
+  &.success {
+    background-color: $green-dark;
+    .alert-content {
+      color: $lighten;
+    }
+  }
+  &.info {
+    background-color: $cyan-dark;
+    .alert-content {
+      color: $darken;
+    }
+  }
+
+  border: 1px rgba($lighten, 0.5) solid;
+  border-radius: 0.5rem;
+  opacity: 1;
+
+  padding: 1rem 1.33rem;
+  margin-left: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+
+  &-content {
+    text-align: start;
+    line-height: 1;
+    font-weight: 300;
+  }
+
+  &-button {
+    background-color: $gray;
+    padding: 0.7rem;
+    border-radius: 50%;
+    line-height: 0.66;
+    border: 1px rgba($lighten, 1) solid;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  &.hide {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($grayDark, 0.6);
+  backdrop-filter: blur(1px) saturate(20%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-container {
+    height: 22.5rem;
+    width: 45rem;
+  }
+
+  &-card {
+    height: 100%;
+    background-color: $darken;
+    border: 1px rgba($lighten, 0.3) solid;
+    border-radius: 1rem;
+
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &-buttons {
+    @include center-content;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &-button {
+    &.accept {
+      @include button($blue, $red-dark, $red-light);
+    }
+    &.cancel {
+      @include button($blue, $blue-dark, $blue-light);
+    }
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

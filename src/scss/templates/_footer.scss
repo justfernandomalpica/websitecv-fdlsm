@@ -1,0 +1,33 @@
+@use "include" as *;
+
+.footer {
+  background-color: $darken;
+  padding-top: 3rem;
+  padding-bottom: calc(5.5rem + 3.5rem);
+  border-top: 1px rgba($light, 0.3) solid;
+
+  @include desktop-s {
+    padding: 3rem 0;
+  }
+
+  &-container {
+    @include center-content;
+
+    p {
+      font-size: calc($base-size * 0.7);
+      text-align: center;
+      span {
+        font-size: calc($base-size * 0.75);
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.is-public .footer {
+  @include seciton;
+}
+
+.is-admin .footer {
+  padding: 1.5rem 0;
+}

@@ -1,0 +1,35 @@
+@use "sass:color";
+
+$base-size: 1.8rem;
+$base-font: "Roboto", sans-serif;
+$separation: 5rem;
+
+// Theme
+$darken: #262e3e;
+$dark: #2c3443;
+$grayDark: #323846;
+$gray: #3b414e;
+$light: #ccd1dd;
+$lighten: #f1f1f1;
+
+// Elements
+$blue: #386ae6;
+$cyan: #38cee8;
+$green: #31e184;
+$red: #e63946;
+
+// Elements variants
+$blue-dark: color.adjust($blue, $lightness: -10%);
+$blue-light: color.adjust($blue, $lightness: +10%);
+$cyan-dark: color.adjust($cyan, $lightness: -10%);
+$cyan-light: color.adjust($cyan, $lightness: +10%);
+$green-dark: color.adjust($green, $lightness: -10%);
+$green-light: color.adjust($green, $lightness: +10%);
+$red-dark: color.adjust($red, $lightness: -10%);
+$red-light: color.adjust($red, $lightness: +10%);
+
+// Device sizes
+$mobile: 481px;
+$tablet: 765px;
+$desktop-s: 992px;
+$desktop-l: 1200px;

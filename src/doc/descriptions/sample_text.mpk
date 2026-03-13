@@ -1,0 +1,23 @@
+@h2 Este proyecto lo realicé a modo de tesis de titulación. 
+@p  Consiste en un circuito analógico que genera 3 señales llamadas "complejas" que al graficarse una contra las otras (Modo XYZ para osciloscopios tridimensionales) generan lo que se conoce como "Atractores de Chua".
+@br
+@p  Las aplicaciones de este proyecto suponen una herramienta para trabajos de investigación, así como un entorno controlado de sistemas caóticos. Siendo especialmente útil para simular sistemas reales cuya naturaleza radica en el comportamiento complejo y pseudoaleatorio. 
+@br
+@p  Para este proyecto fue necesaria la utilización de todas las herramientas que se me fueron proporcionadas a lo largo de mi carrera universitaria. Diseño electrónico así como computación de sistemas mecatrónicos.
+@br
+@h2 El trabajo consistió en tres etapas fundamentales:
+@br
+@ul(
+@li(
+@h3 Diseño e implementación electrónica.
+@p  Fue necesario investigar ampliamente el trabajo de Leon Ong Chua, así como de todos los relacionados a su investigación de sistemas complejos.  Igualmente analizar las implementaciones de este circuito en la actualidad. Fue en esta etapa donde se hizo evidente la necesidad principal que pretendía cubrir desde la planeación de la tesis: "Desarrollar un sistema barato, escalable y reproducible del circuito de Chua, que facilitara su acceso desde cualquier laboratorio". Posteriormente, con el objetivo cumplir con esta meta, se realizó un diseño optimizado para ser barato y confiable.
+@li)
+@li(
+@h3 Etapa de prototipado y manufactura.
+@p  Una vez concebido el diseño final, comencé con el prototipado, el cual consistió en ir desde placas de pruebas (protoboards) unicamente para probar que el concepto del diseño era correcto, hasta placas fenólicas grabadas por serigrafía, que permitieron  ajustar cosas como las dimensiones del producto final, tamaño de componentes, anchos de pista, etc. Por ultimo, una vez confirmado que el diseño es óptimo para su producción,  se mandó a fabricar con el servicio en linea JLCPCB. Al llegar las placas, se hizo el ensamble  y una serie de pruebas para confirmar su funcionamiento.
+@li)
+@li(
+@h3 Software
+@p  Con el circuito en mano, era momento de desarrollar un programa capaz de interpretar los datos recopilados con el Arduino UNO. Esto se hizo con la ayuda de la herramienta LabVIEW, que cuenta con addons concebidos justo para trabajar con la comunicación serial de Arduino.
+@li)
+@ul)

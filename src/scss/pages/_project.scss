@@ -1,0 +1,98 @@
+@use "include" as *;
+
+.project__container {
+  @include center-content(90%);
+  @include seciton;
+}
+
+.project__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: calc($base-size * 3);
+  }
+
+  .project__thumbnail {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .project__thumbnail,
+  .image__placeholder {
+    margin-top: 2rem;
+    max-width: 30rem;
+    color: rgba($color: $light, $alpha: 0.4);
+  }
+
+  p {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+.project__description {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.rich-text {
+  margin-top: 2rem;
+}
+
+.project__galery {
+  h2 {
+    margin: calc($separation/2) 0;
+    text-align: center;
+  }
+}
+
+.galery__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  justify-content: center;
+  gap: 2rem;
+
+  .galery__image {
+    border-radius: 1rem;
+    overflow: hidden;
+
+    transition: transform 300ms ease;
+    &:hover {
+      transform: scale(1.075);
+      cursor: pointer;
+    }
+  }
+}
+
+.image__placeholder {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  max-width: 30rem;
+  color: rgba($color: $light, $alpha: 0.4);
+}
+
+.galery__modal {
+  z-index: 2000;
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background-color: rgba($color: $darken, $alpha: 0.6);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-width: 50rem;
+    min-width: 25rem;
+    margin: 0 5rem;
+  }
+  display: none;
+}
+
+.modal__show {
+  display: flex;
+}

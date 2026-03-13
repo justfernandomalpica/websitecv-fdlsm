@@ -1,0 +1,41 @@
+@use "include" as *;
+
+.create-form {
+  width: 100%;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    &.experience {
+      gap: 2rem;
+    }
+    .experience {
+      &-type {
+        &-container {
+          width: min(50rem, 100%);
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+        }
+      }
+    }
+  }
+
+  &-input {
+    width: min(50rem, 100%);
+  }
+
+  &-textarea {
+    width: min(50rem, 100%);
+    height: 20rem;
+  }
+
+  &-submit {
+    @include button($green-dark, $green, $blue-light, 12rem);
+    color: $lighten;
+    margin-left: auto;
+  }
+}

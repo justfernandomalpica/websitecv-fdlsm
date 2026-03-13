@@ -1,0 +1,84 @@
+@use "include" as *;
+
+.contact {
+  @include center-content(80%, 70rem);
+  @include seciton;
+
+  h2 {
+    text-align: center;
+  }
+
+  &-social {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-content: center;
+    gap: 3rem;
+
+    @include tablet {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+    }
+
+    .contact-external {
+      $svg-size: 3rem;
+      max-height: fit-content;
+      max-width: fit-content;
+      background-color: $grayDark;
+      border: 1px rgba($lighten, 0.2) solid;
+      padding: 1.5rem;
+      border-radius: 50%;
+      margin: 0 auto;
+
+      svg {
+        fill: $lighten;
+        height: $svg-size;
+        width: $svg-size;
+      }
+
+      position: relative;
+
+      &::before {
+        z-index: -2;
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: conic-gradient($blue, $green, $red, $blue);
+        border-radius: 50%;
+        transform: scale(1.25);
+        filter: blur(5px);
+        opacity: 0;
+
+        transition: opacity 300ms ease;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &-media {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem;
+
+    @include mobile {
+      flex-direction: row;
+    }
+  }
+
+  &-media-link {
+    &.email {
+      @include button($green-dark, $green, $green-light);
+    }
+    &.resume {
+      @include button($cyan-dark, $cyan, $cyan-light);
+    }
+  }
+}

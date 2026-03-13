@@ -1,0 +1,99 @@
+@use "include" as *;
+@use "sass:color";
+
+.career {
+  @include center-content;
+  @include seciton;
+
+  h2 {
+    text-align: center;
+  }
+
+  &-fields {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    // transition:
+    //   background-color 0.4 ease,
+    //   color 0.4 ease;
+  }
+
+  &-field {
+    h3 {
+      text-align: center;
+      color: $cyan;
+    }
+  }
+
+  &-container {
+    margin-top: 3rem;
+    padding-left: 3rem;
+    border-left: 1px solid $light;
+  }
+
+  &-step {
+    $transition-time: 0.5s;
+
+    padding: 1.6rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+
+    position: relative;
+
+    transition:
+      background-color $transition-time ease,
+      box-shadow $transition-time ease,
+      color $transition-time ease;
+
+    h4,
+    h5 {
+      margin: 1rem 0;
+    }
+
+    h5 {
+      margin-top: unset;
+      font-size: calc($base-size * 1);
+    }
+
+    h5 {
+      color: $cyan-dark;
+      font-size: calc($base-size * 0.8);
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      height: 1.3rem;
+      width: 1.3rem;
+      border: 0.16rem solid $light;
+      border-radius: 50%;
+
+      background-color: $gray;
+      right: calc(100% + 24px);
+      top: 22px;
+      transition:
+        background-color 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s;
+    }
+
+    &:hover {
+      background-color: $grayDark;
+      // border: 1px rgba($light, 0.2) solid;
+
+      &::before {
+        top: 21px;
+        right: calc(100% + 25px);
+        background-color: rgba($cyan-dark, 1);
+      }
+    }
+  }
+}
