@@ -10,7 +10,7 @@ use Models\Projects;
 
 class ImagesController {
 
-    private static $folder = __DIR__ . "/../Public/build/img/projects";
+    private static $folder = __DIR__ . "/../public/build/img/projects";
 
     // Se manda a llamar con pasando el arreglo $_FILEs["galery"];
     public static function createMultiImages (array $files, int $projectId, string $role) : void {
@@ -66,8 +66,8 @@ class ImagesController {
 
     private static function deleteSingleImage(Images $img) {
         $name = $img->name;
-        $jpegPath = __DIR__ . "/../Public/build/img/projects/" . $name . ".jpeg";
-        $webpPath = __DIR__ . "/../Public/build/img/projects/" . $name . ".webp";
+        $jpegPath = __DIR__ . "/../public/build/img/projects/" . $name . ".jpeg";
+        $webpPath = __DIR__ . "/../public/build/img/projects/" . $name . ".webp";
 
         unlink($jpegPath);
         unlink($webpPath);

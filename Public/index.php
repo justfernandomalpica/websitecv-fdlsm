@@ -14,7 +14,7 @@ use Controllers\UpdateController;
 use Models\Users;
 use MVC\Router;
 
-include __DIR__ . "/../Includes/app.php";
+include __DIR__ . "/../includes/app.php";
 
 $router = new Router;
 
@@ -23,7 +23,7 @@ $router->setUrlGET("/login", [LoginController::class, "index"]);
 $router->setUrlPOST("/login", [LoginController::class, "index"]);
 $router->setUrlGET("/logout", [LoginController::class, "logout"]);
 
-// Public frontend
+// public frontend
     // Index
     $router->setUrlGET("/",[IndexController::class, "index"]);
     // Projects

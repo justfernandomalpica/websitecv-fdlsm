@@ -23,7 +23,7 @@ export function css(done) {
         style: "compressed",
       }).on("error", sass.logError),
     )
-    .pipe(dest("./Public/build/css", { sourcemaps: "." }));
+    .pipe(dest("./public/build/css", { sourcemaps: "." }));
   done();
 }
 
@@ -32,13 +32,13 @@ export function js(done) {
     .pipe(concat("bundle.js")) // final output file name
     .pipe(terser())
     .pipe(rename({ suffix: ".min" }))
-    .pipe(dest("./Public/build/js"));
+    .pipe(dest("./public/build/js"));
   done();
 }
 
 export async function imagenes(done) {
   const srcDir = "./src/img";
-  const buildDir = "./Public/build/img";
+  const buildDir = "./public/build/img";
   const images = await glob("./src/img/**/*");
 
   images.forEach((file) => {

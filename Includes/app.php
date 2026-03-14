@@ -8,7 +8,7 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
 require __DIR__ . "/functions.php";
-require __DIR__ . "/Config/database.php";
+require __DIR__ . "/config/database.php";
 
 ActiveRecord::setDB($db);
 
